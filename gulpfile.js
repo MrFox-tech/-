@@ -12,12 +12,14 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const devip = require('dev-ip');
 
 function browsersync() {
   browserSync.init({
     server: {
       baseDir: 'app/'
-    }
+    },
+    host: devip()
   })
 }
 

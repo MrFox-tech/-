@@ -4,6 +4,59 @@
 @import 'global';
 
 
+.header-contacts {
+  &__wrapper {
+    background-color: $dark-800;
+    padding: 15px 0;
+    color: $white;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    @extend %opensans-700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+}
+
+.contacts-link--delivery {}
+
+.header-link {
+  &__caption {
+    @extend %opensans-700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
+.contacts-link--hotline {}
+
+.user-nav {
+  background-color: $green-900;
+  padding: 25px 0;
+}
+
 
 
 @import 'media';
