@@ -4,21 +4,67 @@
 @import 'global';
 
 
-.header-contacts {
+
+.header {
   &__wrapper {
     background-color: $dark-800;
-    padding: 15px 0;
+    padding: 17px 0 15px 0;
     color: $white;
   }
+}
 
-  &__container {
+.header-top {
+
+  &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
+  &__info {
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    &:hover {
+      opacity: .7;
+      transition: opacity .3s ease;
+    }
+
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.0001);
+      box-shadow: 0 0 0 3px $green-100;
+      border-radius: 3px;
+      transition: background-color .3s ease, box-shadow .3s ease;
+    }
+
+    &:active {
+      color: $green-200;
+      transition: color .3s ease;
+    }
+
+  }
+
+  &__caption {
+    @extend %opensans-700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+  }
+
   &__list {
     display: flex;
+
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
   }
 
   &__link {
@@ -27,35 +73,48 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
-    &:not(:last-child) {
-      margin-right: 50px;
+    &:hover {
+      opacity: .7;
+      transition: opacity .3s ease;
+    }
+
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.0001);
+      box-shadow: 0 0 0 3px $green-100;
+      border-radius: 3px;
+      transition: background-color .3s ease, box-shadow .3s ease;
+    }
+
+    &:active {
+      color: $green-200;
+      transition: color .3s ease;
     }
   }
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: 25px;
-    }
+  &--delivery {
+    background-image: url('../images/sprite.svg#icon-address');
+    background-size: 32px;
+    padding-left: 44px;
+  }
+
+  &--hotline {
+    background-image: url('../images/sprite.svg#icon-tel');
+    padding-left: 35px;
   }
 }
-
-.contacts-link--delivery {}
-
-.header-link {
-  &__caption {
-    @extend %opensans-700;
-    font-size: 13px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-}
-
-.contacts-link--hotline {}
 
 .user-nav {
   background-color: $green-900;
   padding: 25px 0;
 }
+
+.logo {
+  &__img {}
+}
+
+
+
+
 
 
 
