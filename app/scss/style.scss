@@ -12,17 +12,15 @@
     padding: 17px 0 15px 0;
     color: $white;
   }
-}
-
-.header-top {
 
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-all-sb
   }
+}
 
-  &__info {
+.header {
+
+  &__info-link {
     background-position: left center;
     background-repeat: no-repeat;
 
@@ -46,32 +44,40 @@
       color: $green-200;
       transition: color .3s ease;
     }
-
   }
 
-  &__caption {
+  &__info--delivery {
+    background-image: url('../images/sprite.svg#icon-address');
+    background-size: 32px;
+    padding-left: 44px;
+  }
+
+  &__info-caption {
     @extend %opensans-700;
     font-size: 13px;
-    letter-spacing: 0.03em;
     text-transform: uppercase;
-
   }
 
+  &__info--hotline {
+    background-image: url('../images/sprite.svg#icon-tel');
+    padding-left: 35px;
+  }
+}
+
+.menu {
   &__list {
-    display: flex;
-
+    @include flex
   }
 
-  &__item {
+  &__list-item {
     &:not(:last-child) {
       margin-right: 25px;
     }
   }
 
-  &__link {
+  &__list-link {
     @extend %opensans-700;
     font-size: 13px;
-    letter-spacing: 0.03em;
     text-transform: uppercase;
 
     &:hover {
@@ -91,29 +97,76 @@
       transition: color .3s ease;
     }
   }
-
-  &--delivery {
-    background-image: url('../images/sprite.svg#icon-address');
-    background-size: 32px;
-    padding-left: 44px;
-  }
-
-  &--hotline {
-    background-image: url('../images/sprite.svg#icon-tel');
-    padding-left: 35px;
-  }
 }
+
+
 
 .user-nav {
   background-color: $green-900;
   padding: 25px 0;
-}
 
-.logo {
-  &__img {
-    display:block;
+  &__inner {
+    @include flex-all-sb
   }
 }
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+
+  &__btn {
+    @extend %opensans-600;
+    color: $christi;
+    border: 1px solid transparent;
+    border-radius: 6px 6px 0 0;
+    background-color: $green-200;
+    max-width: 250px;
+    padding: 15px 38px 15px 61px;
+
+  }
+
+
+  &__content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+    background-color: $white;
+    border: 1px solid $gallery;
+    border-radius: 0px 0px 6px 6px;
+  }
+
+  &__content--open {
+    display: block;
+  }
+
+
+  &__content-item {
+    padding-top: 15px;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      width: 100%;
+      background-color: rgba(193, 193, 193, 0.3);
+
+    }
+    
+  }
+
+  &__content-link {
+    font-size: 16px;
+    color: $dark;
+    position: relative;
+    padding-left: 25px;
+
+  }
+
+}
+
 
 
 
