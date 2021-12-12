@@ -130,6 +130,7 @@
     display: none;
     position: absolute;
     width: 100%;
+    max-width: 250px;
     overflow: auto;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
     background-color: $white;
@@ -143,26 +144,40 @@
 
 
   &__content-item {
-    padding-top: 15px;
+    padding: 15px 0;
 
-    &:after {
+    &::after {
       content: '';
       display: block;
+      position: relative;
+      top: 15px;
       height: 1px;
-      position: absolute;
       width: 100%;
       background-color: rgba(193, 193, 193, 0.3);
-
     }
-    
+
+    &:last-of-type::after {
+      height: 0;
+    }
+
+    &--active {
+      border-left: 3px solid $christi;
+    }
+
+    &:hover {
+      border-left: 3px solid $christi;
+    }
+
   }
 
   &__content-link {
     font-size: 16px;
     color: $dark;
-    position: relative;
     padding-left: 25px;
 
+    &:hover {
+      color: $christi;
+    }
   }
 
 }
