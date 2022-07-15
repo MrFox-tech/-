@@ -1,10 +1,19 @@
+html,
+body {
+  height: 100%;
+}
 body {
   @extend %opensans-400;
   background-color: $white;
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.03em;
+  display: flex;
+  flex-direction: column;
+}
 
+.main {
+  flex-grow: 1;
 }
 
 .container {
